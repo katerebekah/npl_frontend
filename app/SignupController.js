@@ -1,9 +1,9 @@
 (function(){
     angular.module('npl').controller('SignupController', SignupController);
 
-    SignupController.$inject = ['$scope'];
+    SignupController.$inject = ['$scope', '$location'];
 
-    function SignupController($scope){
+    function SignupController($scope, $location){
         var viewModel = this;
     }
 

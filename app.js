@@ -1,5 +1,5 @@
 (function(){
-    angular.module('npl', ['ngRoute']);
+    angular.module('npl', ['ngRoute', 'LocalStorageModule']);
 
     angular.module('npl').config(config);
 
@@ -7,13 +7,6 @@
   // this prevents minification issues
   config.$inject = ['$routeProvider', '$locationProvider', '$httpProvider', '$compileProvider'];
 
-  /**
-   * App routing
-   *
-   * You can leave it here in the config section or take it out
-   * into separate file
-   * 
-   */
   function config($routeProvider, $locationProvider, $httpProvider, $compileProvider) {
 
     $locationProvider.html5Mode(false);
@@ -43,6 +36,20 @@
       .otherwise({
         redirectTo: '/'
       });
-
   }
+
+    var serviceBase = '';
+    angular.module('npl').constant('ngAuthSettings', {
+        apiServiceBaseUri: serviceBase,
+        clientId: 'ngAuthApp'
+    });
+
+     angular.module('npl').config(function ($httpProvider) {
+        $httpProvider.interceptors.push('AuthInterceptorService');
+    });
+
+    angular.module('npl').run(['AuthService', function (AuthService) {
+        AuthService.GetUserAuth();
+    }]);
+
 })();

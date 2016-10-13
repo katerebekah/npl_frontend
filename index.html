@@ -1,13 +1,37 @@
 <html>
-    <head></head>
+    <head>
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link href="/node_modules/materialize-css/dist/css/materialize.min.css" rel="stylesheet" />
+        
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
     <body>
         <div ng-app="npl">
-               <p>"hello"</p>
-               <div ng-view></div>
+            <nav ng-controller="IndexController as index">
+                <div class="nav-wrapper">
+                    <a href="#" class="brand-logo">Logo</a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li ng-show="index.user.isAuthenticated">Welcome, {{index.user.userName}}</li>
+                        <li ng-show="index.user.isAuthenticated"><a href="/dashboard/{{index.user.userName}}">My Dashboard</a></li>
+                        <li ng-hide="index.user.isAuthenticated"><a href="/login">Log In</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div ng-view></div>
         </div>
+        
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="/node_modules/materialize-css/dist/js/materialize.min.js"></script>
         <script src="/node_modules/angular/angular.min.js"></script>
         <script src="/node_modules/angular-route/angular-route.min.js"></script>
-        <script src="app.js"></scrip>
+        <script src="/node_modules/angular-local-storage/dist/angular-local-storage.min.js"></script>
+        <script src="app.js"></script>
+        <script src="app/AuthInterceptorService.js"></script>
+        <script src="app/TokenManagerService.js"></script>
+        <script src="app/AuthService.js"></script>
+        <script src="app/ClientFactory.js"></script>
         <script src="app/DashboardController.js"></script>
         <script src="app/HomeController.js"></script>
         <script src="app/LoginController.js"></script>
