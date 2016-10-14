@@ -8,11 +8,12 @@
 
         var DeleteAgency = function(id){
             var deferred = $q.defer();
-            $http.delete(serviceBase + '/agency/' + id).then(function(response){
+            $http.delete(serviceBase + 'agency/' + id).then(function(response){
                 deferred.resolve(response);
             }, function(err){
                 deferred.reject(err);
             });
+             return deferred.promise;    
         }
 
         var UpdateAgency = function(agency){
@@ -22,6 +23,7 @@
             }, function(err){
                 deferred.reject(err);
             });
+             return deferred.promise;    
         }
 
         var AddAgency = function(agency){
@@ -31,24 +33,27 @@
             }, function(err){
                 deferred.reject(err);
             });
+             return deferred.promise;    
         }
 
         var GetAgencyById = function(id){
             var deferred = $q.defer();
-            $http.get(serviceBase + '/agency/' + id).then(function(response){
+            $http.get(serviceBase + 'agency/' + id).then(function(response){
                 deferred.resolve(response);
             }, function(err){
                 deferred.reject(err);
             });
+             return deferred.promise;    
         }
 
         var DeleteEmployee = function(id){
             var deferred = $q.defer();
-            $http.delete(serviceBase + '/employee/' + id).then(function(response){
+            $http.delete(serviceBase + 'employee/' + id).then(function(response){
                 deferred.resolve(response);
             }, function(err){
                 deferred.reject(err);
             });
+             return deferred.promise;    
         }
 
         var UpdateEmployee = function(employee){
@@ -58,6 +63,7 @@
             }, function(err){
                 deferred.reject(err);
             });
+             return deferred.promise;    
         }
 
         var AddEmployee = function(employee){
@@ -67,24 +73,27 @@
             }, function(err){
                 deferred.reject(err);
             });
+             return deferred.promise;    
         }
 
         var GetEmployeeById = function(id){
             var deferred = $q.defer();
-            $http.get(serviceBase + '/employee/' + id).then(function(response){
+            $http.get(serviceBase + 'employee/' + id).then(function(response){
                 deferred.resolve(response);
             }, function(err){
                 deferred.reject(err);
             });
+             return deferred.promise;    
         }
 
         var DeleteService = function(id){
             var deferred = $q.defer();
-            $http.delete(serviceBase + '/service/' + id).then(function(response){
+            $http.delete(serviceBase + 'service/' + id).then(function(response){
                 deferred.resolve(response);
             }, function(err){
                 deferred.reject(err);
             });
+             return deferred.promise;    
         }
 
         var UpdateService = function(service){
@@ -94,6 +103,7 @@
             }, function(err){
                 deferred.reject(err);
             });
+             return deferred.promise;    
         }
 
         var AddService = function(service){
@@ -103,24 +113,27 @@
             }, function(err){
                 deferred.reject(err);
             });
+             return deferred.promise;    
         }
 
         var GetServiceById = function(id){
             var deferred = $q.defer();
-            $http.get(serviceBase + '/service/' + id).then(function(response){
+            $http.get(serviceBase + 'service/' + id).then(function(response){
                 deferred.resolve(response);
             }, function(err){
                 deferred.reject(err);
             });
+             return deferred.promise;    
         }
 
         var DeleteReferrel = function(id){
             var deferred = $q.defer();
-            $http.delete(serviceBase + '/referral/' + id).then(function(response){
+            $http.delete(serviceBase + 'referral/' + id).then(function(response){
                 deferred.resolve(response);
             }, function(err){
                 deferred.reject(err);
             });
+             return deferred.promise;    
         }
 
         var UpdateReferrel = function(referral){
@@ -130,6 +143,7 @@
             }, function(err){
                 deferred.reject(err);
             });
+             return deferred.promise;    
         }
 
         var AddReferrel = function(referral){
@@ -139,20 +153,22 @@
             }, function(err){
                 deferred.reject(err);
             });
+             return deferred.promise;    
         }
 
         var GetReferralByClientId = function(id){
             var deferred = $q.defer();
-            $http.get(serviceBase + '/referral/client/' + id).then(function(response){
+            $http.get(serviceBase + 'referral/client/' + id).then(function(response){
                 deferred.resolve(response);
             }, function(err){
                 deferred.reject(err);
             });
+             return deferred.promise;    
         }
 
         var GetReferralById = function(id){
             var deferred = $q.defer();
-            $http.get(serviceBase + '/referral/' + id).then(function(response){
+            $http.get(serviceBase + 'referral/' + id).then(function(response){
                 deferred.resolve(response);
             }, function(err){
                 deferred.reject(err);
@@ -162,7 +178,7 @@
 
         var DeleteClient = function(id){
             var deferred = $q.defer();
-            $http.delete(serviceBase + '/client/' + id).then(function(response){
+            $http.delete(serviceBase + 'client/' + id).then(function(response){
                 deferred.resolve(response);
             }, function(err){
             deferred.reject(err);
@@ -192,7 +208,7 @@
 
         var GetClientById = function(id){
             var deferred = $q.defer();
-            $http.get(serviceBase + '/client/'+ id).then(function(response){
+            $http.get(serviceBase + 'client/'+ id).then(function(response){
                 deffered.resolve(response);
             }, function(err){
                  deferred.reject(err);
@@ -202,7 +218,7 @@
 
         var GetClientByEmail = function(email){
             var deferred = $q.defer();
-            $http.get(serviceBase + '/client/' + email).then(function(response){
+            $http.get(serviceBase + 'client/' + email).then(function(response){
                 deferred.resolve(response);
             }, function(err){
                 deferred.reject(err);
@@ -213,7 +229,7 @@
         
         var GetAllClients = function(){
              var deferred = $q.defer();
-             $http.get(serviceBase + '/client').then(function(response){
+             $http.get(serviceBase + 'client').then(function(response){
                 deferred.resolve(response);
              }, function(err){
                  deferred.reject(err);
@@ -223,7 +239,7 @@
 
         var GetAllReferrals = function(){
              var deferred = $q.defer();
-             $http.get(serviceBase + '/referral').then(function(response){
+             $http.get(serviceBase + 'referral').then(function(response){
                 deferred.resolve(response);
              }, function(err){
                  deferred.reject(err);
@@ -233,7 +249,7 @@
 
         var GetAllClients = function(){
              var deferred = $q.defer();
-             $http.get(serviceBase + '/client').then(function(response){
+             $http.get(serviceBase + 'client').then(function(response){
                 deferred.resolve(response);
              }, function(err){
                  deferred.reject(err);
@@ -243,7 +259,7 @@
         
         var GetAllEmployees = function(){
              var deferred = $q.defer();
-             $http.get(serviceBase + '/employee').then(function(response){
+             $http.get(serviceBase + 'employee').then(function(response){
                 deferred.resolve(response);
              }, function(err){
                  deferred.reject(err);
@@ -253,7 +269,7 @@
 
         var GetAllServices = function(){
              var deferred = $q.defer();
-             $http.get(serviceBase + '/service').then(function(response){
+             $http.get(serviceBase + 'service').then(function(response){
                 deferred.resolve(response);
              }, function(err){
                  deferred.reject(err);
