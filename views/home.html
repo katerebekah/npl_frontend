@@ -1,1 +1,140 @@
-<p>Home</p>
+<h3>Nashville Helps</h3>
+<p>is a team of nonprofit organizations, educators, and other social service providers in the Nashville area that can help connect adults to the resources they need.</p>
+
+<a ng-click="home.openClientForm" href="#clientFormModal" class="waves-effect waves-light btn">Get Started</a>
+
+<!-- Modal Structure -->
+  <div id="clientFormModal" class="modal">
+    <div id="slide1">
+        <div class="modal-content">
+            <h4>What is your name?</h4>
+            <div class="input-field col s6">
+                <input id="firstName" ng-model="home.clientForm.firstName" type="text" class="validate">
+                <label for="firstName">First Name</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="lastName" ng-model="home.clientForm.lastName" type="text" class="validate">
+                <label for="lastName">Last Name</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a ng-click="nextSlide()" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+            <a href="!#" class=" modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
+        </div>
+    </div>
+    <div id="slide2">
+        <div class="modal-content">
+            <h4>What is your phone number?</h4>
+            <div class="row">
+                <div class="input-field col s3">
+                    <input id="areaCode1" ng-model="home.clientForm.areaCode1" type="text" class="validate">
+                    <label for="areaCode1">Area Code</label>
+                </div>
+                <div class="input-field col s9">
+                    <input id="phoneNumber" ng-model="home.clientForm.phoneNumber" type="text" class="validate">
+                    <label for="phoneNumber">Phone Number</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s3">
+                    <input id="areaCode2" ng-model="home.clientForm.areaCode2" type="text" class="validate">
+                    <label for="areaCode2">Secondary Area Code</label>
+                </div>
+                <div class="input-field col s9">
+                    <input id="phoneNumber" ng-model="home.clientForm.phoneNumber2" type="text" class="validate">
+                    <label for="phoneNumber">Secondary Phone Number</label>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a ng-click="previousSlide()" class=" modal-action modal-close waves-effect waves-green btn-flat">Back</a>
+            <a ng-click="nextSlide()" class=" modal-action modal-close waves-effect waves-green btn-flat">Next</a>
+            <a href="!#" class=" modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
+        </div>
+    </div>
+    <div id="slide3">
+        <div class="modal-content">
+            <h4>What is your email address?</h4>
+             <div class="input-field col s12">
+                <input id="emailAddress" ng-model="home.clientForm.emailAddress" type="email" class="validate">
+                <label for="emailAddress">Secondary Area Code</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a ng-click="previousSlide()" class=" modal-action modal-close waves-effect waves-green btn-flat">Back</a>
+            <a ng-click="nextSlide()" class=" modal-action modal-close waves-effect waves-green btn-flat">Next</a>
+            <a href="!#" class=" modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
+        </div>
+    </div>
+    <div id="slide4">
+        <div class="modal-content">
+            <h4>What is your address?</h4>
+            <div class="row">
+                <div class="input-field col s3">
+                    <input id="houseNumber" ng-model="home.clientForm.houseNumber" type="text" class="validate">
+                    <label for="houseNumber">House Number</label>
+                </div>
+                <div class="input-field col s9">
+                    <input id="streetName" ng-model="home.clientForm.streetName" type="text" class="validate">
+                    <label for="streetName">StreetName</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="zipCode" ng-model="home.clientForm.zipCode" type="zipCode" class="validate">
+                    <label for="zipCode">Zip Code</label>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a ng-click="previousSlide()" class=" modal-action modal-close waves-effect waves-green btn-flat">Back</a>
+            <a ng-click="nextSlide()" class=" modal-action modal-close waves-effect waves-green btn-flat">Next</a>
+            <a href="!#" class=" modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
+        </div>
+    </div>
+    <div id="slide5">
+        <div class="modal-content">
+            <h4>What services are you requesting?</h4>
+            <p>Insert Select Box Here</p>
+        </div>
+        <div class="modal-footer">
+            <a ng-click="previousSlide()" class=" modal-action modal-close waves-effect waves-green btn-flat">Back</a>
+            <a ng-click="nextSlide()" class=" modal-action modal-close waves-effect waves-green btn-flat">Next</a>
+            <a href="!#" class=" modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
+        </div>
+    </div>
+    <div id="slide6">
+        <div class="modal-content">
+            <h4>Is there anything else we should know about you?</h4>
+            <div class="input-field col s12">
+                <textarea id="notes" ng-model="home.clientForm.notes" class="materialize-textarea"></textarea>
+                <label for="notes">Notes</label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a ng-click="previousSlide()" class=" modal-action modal-close waves-effect waves-green btn-flat">Back</a>
+            <a ng-click="nextSlide()" class=" modal-action modal-close waves-effect waves-green btn-flat">Next</a>
+            <a href="!#" class=" modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
+        </div>
+    </div>
+    <div id="slide7">
+        <div class="modal-content">
+            <h4>Review</h4>
+            <ul>
+                <li>First Name: {{home.clientForm.firstName}}</li>
+                <li>Last Name: {{home.clientForm.lastName}}</li>
+                <li>Email Address: {{home.clientForm.emailAddress}}</li>
+                <li>Phone Number: ({{home.clientForm.areaCode1}}) {{home.clientForm.phoneNumber}}</li>
+                <li>Secondary Phone Number: ({{home.clientForm.areaCode2}}) {{home.clientForm.phoneNumber2}}</li>
+                <li>Address: {{home.clientForm.houseNumber}} {{home.clientForm.streetName}} {{home.clientForm.zipCode}}</li>
+                <li>Services Requested: Insert Here</li>
+                <li>Notes: {{home.clientForm.firstName}}</li>
+            </ul>            
+        </div>
+        <div class="modal-footer">
+            <a ng-click="previousSlide()" class=" modal-action modal-close waves-effect waves-green btn-flat">Back</a>
+            <a ng-click="nextSlide()" class=" modal-action modal-close waves-effect waves-green btn-flat">Next</a>
+            <a href="!#" class=" modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
+        </div>
+    </div>
+  </div>
