@@ -1,11 +1,13 @@
+<h4 ng-show="home.success">{{home.successMessage}}
+
 <h3>Nashville Helps</h3>
 <p>is a team of nonprofit organizations, educators, and other social service providers in the Nashville area that can help connect adults to the resources they need.</p>
 
-<a ng-click="home.openClientForm" href="#clientFormModal" class="waves-effect waves-light btn">Get Started</a>
+<a ng-click="home.openClientForm()" class="waves-effect waves-light btn">Get Started</a>
 
 <!-- Modal Structure -->
   <div id="clientFormModal" class="modal">
-    <div id="slide1">
+    <div id="slide1" ng-show="home.active == 1">
         <div class="modal-content">
             <h4>What is your name?</h4>
             <div class="input-field col s6">
@@ -18,8 +20,8 @@
             </div>
         </div>
         <div class="modal-footer">
-            <a ng-click="nextSlide()" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-            <a href="!#" class=" modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
+            <a ng-click="home.changeSlide(2)" class=" modal-action modal-close waves-effect waves-green btn-flat">Next</a>
+            <a ng-click="home.exit()" class=" modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
         </div>
     </div>
     <div id="slide2">
@@ -47,9 +49,9 @@
             </div>
         </div>
         <div class="modal-footer">
-            <a ng-click="previousSlide()" class=" modal-action modal-close waves-effect waves-green btn-flat">Back</a>
-            <a ng-click="nextSlide()" class=" modal-action modal-close waves-effect waves-green btn-flat">Next</a>
-            <a href="!#" class=" modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
+            <a ng-click="home.changeSlide(1)" class=" modal-action modal-close waves-effect waves-green btn-flat">Back</a>
+            <a ng-click="home.changeSlide(3)" class=" modal-action modal-close waves-effect waves-green btn-flat">Next</a>
+            <a ng-click="home.exit()" class=" modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
         </div>
     </div>
     <div id="slide3">
@@ -61,9 +63,9 @@
             </div>
         </div>
         <div class="modal-footer">
-            <a ng-click="previousSlide()" class=" modal-action modal-close waves-effect waves-green btn-flat">Back</a>
-            <a ng-click="nextSlide()" class=" modal-action modal-close waves-effect waves-green btn-flat">Next</a>
-            <a href="!#" class=" modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
+            <a ng-click="home.changeSlide(2)" class=" modal-action modal-close waves-effect waves-green btn-flat">Back</a>
+            <a ng-click="home.changeSlide(4)" class=" modal-action modal-close waves-effect waves-green btn-flat">Next</a>
+            <a ng-click="home.exit()" class=" modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
         </div>
     </div>
     <div id="slide4">
@@ -87,9 +89,9 @@
             </div>
         </div>
         <div class="modal-footer">
-            <a ng-click="previousSlide()" class=" modal-action modal-close waves-effect waves-green btn-flat">Back</a>
-            <a ng-click="nextSlide()" class=" modal-action modal-close waves-effect waves-green btn-flat">Next</a>
-            <a href="!#" class=" modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
+            <a ng-click="home.changeSlide(3)" class=" modal-action modal-close waves-effect waves-green btn-flat">Back</a>
+            <a ng-click="home.changeSlide(5)" class=" modal-action modal-close waves-effect waves-green btn-flat">Next</a>
+            <a ng-click="home.exit()" class=" modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
         </div>
     </div>
     <div id="slide5">
@@ -98,9 +100,9 @@
             <p>Insert Select Box Here</p>
         </div>
         <div class="modal-footer">
-            <a ng-click="previousSlide()" class=" modal-action modal-close waves-effect waves-green btn-flat">Back</a>
-            <a ng-click="nextSlide()" class=" modal-action modal-close waves-effect waves-green btn-flat">Next</a>
-            <a href="!#" class=" modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
+            <a ng-click="home.changeSlide(4)" class=" modal-action modal-close waves-effect waves-green btn-flat">Back</a>
+            <a ng-click="home.changeSlide(6)" class=" modal-action modal-close waves-effect waves-green btn-flat">Next</a>
+            <a ng-click="home.exit()" class=" modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
         </div>
     </div>
     <div id="slide6">
@@ -112,9 +114,9 @@
             </div>
         </div>
         <div class="modal-footer">
-            <a ng-click="previousSlide()" class=" modal-action modal-close waves-effect waves-green btn-flat">Back</a>
-            <a ng-click="nextSlide()" class=" modal-action modal-close waves-effect waves-green btn-flat">Next</a>
-            <a href="!#" class=" modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
+            <a ng-click="home.changeSlide(5)" class=" modal-action modal-close waves-effect waves-green btn-flat">Back</a>
+            <a ng-click="home.changeSlide(7)" class=" modal-action modal-close waves-effect waves-green btn-flat">Next</a>
+            <a ng-click="home.exit()" class=" modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
         </div>
     </div>
     <div id="slide7">
@@ -132,9 +134,8 @@
             </ul>            
         </div>
         <div class="modal-footer">
-            <a ng-click="previousSlide()" class=" modal-action modal-close waves-effect waves-green btn-flat">Back</a>
-            <a ng-click="nextSlide()" class=" modal-action modal-close waves-effect waves-green btn-flat">Next</a>
-            <a href="!#" class=" modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
+            <a ng-click="home.changeSlide(6)" class=" modal-action modal-close waves-effect waves-green btn-flat">Back</a>
+            <a ng-click="home.submit()" class=" modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
         </div>
     </div>
   </div>
