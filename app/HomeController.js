@@ -8,6 +8,7 @@
 
         //Load Services for form
         viewModel.services = [];
+        $('select').material_select();
         viewModel.getAllServices = function(){
             DashboardService.GetAllServices().then(function(response){
                 console.log(response.data);
@@ -52,6 +53,19 @@
                 servicesRequested: []
             }
 
+        }
+
+        viewModel.toggleService= function(service){
+            if (viewModel.clientForm.servicesRequested.indexOfObject(service) > 0){
+                viewModel.clientForm.servicesRequested.splice(servicesRequested.indexOfObject(service), 1);
+            }
+            else{
+                viewModel.clientForm.servicesRequested.push(service);
+            }
+        }
+
+        viewModel.isSelected = function(id){
+            return viewModel.clientForm.servicesRequested.indexOfObject(id) > 0;
         }
 
         //active slides in modal

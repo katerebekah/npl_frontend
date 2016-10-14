@@ -58,3 +58,10 @@
     }]);
 
 })();
+
+Array.prototype.indexOfObject = function arrayObjectIndexOf(property, value) {
+    for (var i = 0, len = this.length; i < len; i++) {
+        if (this[i][property] === value) return i;
+    }
+    return -1;
+}

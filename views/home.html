@@ -40,7 +40,7 @@
             <div class="row">
                 <div class="input-field col s3">
                     <input id="areaCode2" ng-model="home.clientForm.areaCode2" type="text" class="validate">
-                    <label for="areaCode2">Secondary Area Code</label>
+                    <label for="areaCode2">Area Code</label>
                 </div>
                 <div class="input-field col s9">
                     <input id="phoneNumber" ng-model="home.clientForm.phoneNumber2" type="text" class="validate">
@@ -76,13 +76,11 @@
                     <input id="houseNumber" ng-model="home.clientForm.houseNumber" type="text" class="validate">
                     <label for="houseNumber">House Number</label>
                 </div>
-                <div class="input-field col s9">
+                <div class="input-field col s6">
                     <input id="streetName" ng-model="home.clientForm.streetName" type="text" class="validate">
                     <label for="streetName">StreetName</label>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
+                <div class="input-field col s3">
                     <input id="zipCode" ng-model="home.clientForm.zipCode" type="text" class="validate">
                     <label for="zipCode">Zip Code</label>
                 </div>
@@ -98,9 +96,10 @@
         <div class="modal-content">
             <h4>What services are you requesting?</h4>
             <div class="input-field col s12">
-                <select >
-                    <option ng-repeat="service in home.services" value="{{service}}">{{service.ServiceDescription}}</option>
-                </select>
+                <p ng-repeat="service in home.services track by $index">
+                    <input ng-click="home.toggleService(service)" name="{{$index}}" id="{{$index}}" type="checkbox" value="{{service}}" />
+                    <label for="{{$index}}">{{service.ServiceCategoryName}}</label>
+                </p>
                 <label>Services</label>
             </div>
         </div>
