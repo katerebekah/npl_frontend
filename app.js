@@ -28,6 +28,11 @@
         controller: 'LoginController',
         controllerAs: 'login'
       })
+      .when('/admin', {
+        templateUrl: 'views/admin.html',
+        controller: 'AdminController',
+        controllerAs: 'admin'
+      })
       .when('/signup', {
         templateUrl: 'views/signup.html',
         controller: 'SignUpController',
@@ -38,7 +43,7 @@
       });
   }
 
-    var serviceBase = '';
+    var serviceBase = 'http://localhost:63845/';
     angular.module('npl').constant('ngAuthSettings', {
         apiServiceBaseUri: serviceBase,
         clientId: 'ngAuthApp'

@@ -1,20 +1,21 @@
 (function(){
     angular.module('npl').controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$scope', '$location', '$timeout', 'authService'];
+    LoginController.$inject = ['$scope', '$location', '$timeout', 'AuthService'];
 
-    function LoginController($scope, $location, $timeout, authService){
+    function LoginController($scope, $location, $timeout, AuthService){
         var viewModel = this;
 
         viewModel.message = "";
         
         viewModel.registration = {
-            Email: "",
-            Password: ""
+            email: "",
+            password: "",
+            confirmPassword: ""
         }
 
         viewModel.Register = function(){
-            authService.register(viewModel.registration).then(function (response) {
+            AuthService.Register(viewModel.registration).then(function (response) {
 
                 viewModel.savedSuccessfully = true;
                 viewModel.message = "Registration successful. Logging you in now...";
@@ -35,7 +36,7 @@
 
         viewModel.Login = function(){
  
-            authService.Login(viewModel.registration).then(function (response) {
+            AuthService.Login(viewModel.registration).then(function (response) {
                 $location.path('/dashboard');    
             },
             function (err) {

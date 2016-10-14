@@ -2,21 +2,22 @@
     <form class="col s12">
       <div class="row">
         <div class="input-field col s6">
-          <input placeholder="User Name" id="userName" ng-model="login.registration.userName" type="text" class="validate">
-          <label for="userName">User Name</label>
+          <input id="email" ng-model="login.registration.email" required type="email" class="validate">
+          <label for="userName">Email</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
+        <div class="input-field col s6">
+          <input id="password" type="password" class="validate" required ng-model="login.registration.password" />
           <label for="password">Password</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s12">
-          <input id="confirm_password" type="password" class="validate" />
+        <div class="input-field col s6">
+          <input id="confirm_password" type="password" class="validate" required ng-model="login.registration.confirmPassword" />
           <label for="confirm_password">Confirm Password</label>
         </div>
       </div>
+      <a ng-click="login.Register()" class="waves-effect waves-light btn">Register</a>
     </form>
   </div>

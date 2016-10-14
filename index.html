@@ -9,12 +9,12 @@
     <body>
         <div ng-app="npl">
             <nav ng-controller="IndexController as index">
-                <div class="nav-wrapper">
-                    <a href="#" class="brand-logo">Logo</a>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li ng-show="index.user.isAuthenticated">Welcome, {{index.user.userName}}</li>
-                        <li ng-show="index.user.isAuthenticated"><a href="/dashboard/{{index.user.userName}}">My Dashboard</a></li>
-                        <li ng-hide="index.user.isAuthenticated"><a href="/login">Log In</a></li>
+                <div class="nav-wrapper indigo darken-4">
+                    <a href="#" class="brand-logo white-text">Logo</a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down white-text">
+                        <li ng-show="index.user.isAuthenticated">Logged in as {{index.user.userName}} | Agency Name</li>
+                        <li ng-show="index.user.isAuthenticated"><a class="waves-effect waves-light btn" href="/dashboard/{{index.user.userName}}">My Dashboard</a></li>
+                        <li ng-hide="index.user.isAuthenticated"><a class="waves-effect waves-light btn" href="/login">Log In</a></li>
                     </ul>
                 </div>
             </nav>
@@ -29,9 +29,9 @@
         <script src="/node_modules/angular-local-storage/dist/angular-local-storage.min.js"></script>
         <script src="app.js"></script>
         <script src="app/AuthInterceptorService.js"></script>
-        <script src="app/TokenManagerService.js"></script>
         <script src="app/AuthService.js"></script>
         <script src="app/ClientFactory.js"></script>
+        <script src="app/IndexController.js"></script>
         <script src="app/DashboardController.js"></script>
         <script src="app/HomeController.js"></script>
         <script src="app/LoginController.js"></script>

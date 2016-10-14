@@ -1,0 +1,37 @@
+
+<div class="row">
+    <div class="col s6">
+        <h3 class="text-white">Requests</h3>
+    </div>
+    <div class="col s6">
+        <a ng-click="filters" class="waves-effect waves-light btn">Filters</a>
+        <a ng-click="order" class="waves-effect waves-light btn">Most Recent</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col s4">
+        
+    </div>
+    <div class="col s8">
+        <div ng-repeat="client in clients">
+            <div class="card">
+                <div class="card-content">
+                    <span class="card-title">{{client.firstName}} {{client.lastName}}</span>
+                    <p>{{client.phoneNumber}}</p>
+                    <p>{{client.email}}</p>
+                    <p>{{client.address}}</p>
+
+                    <h5>Services</h5>
+                    <div ng-repeat="service in client.services">
+                        <div class="chip" ng-click="openConfirm(service)">
+                            {{service.Name}}
+                        </div>
+                    </div>
+
+                    <h5>Notes</h5>
+                    <textarea ng-model="client.notes" rows="5"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

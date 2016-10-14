@@ -4,12 +4,11 @@
     AuthService.$inject = ['$http', '$q', 'localStorageService', 'ngAuthSettings'];
 
     function AuthService($http, $q, localStorageService, ngAuthSettings){
-        var AuthUrl = ngAuthSettings.apiServiceBaseUri;
+        var serviceBase = ngAuthSettings.apiServiceBaseUri;
 
         var auth = {
             isAuthenticated: false,
-            userName: "",
-            useRefreshTokens: false
+            userName: ""
         };
 
         var externalAuthData = {
@@ -55,7 +54,7 @@
         }
 
         var Register = function(registration){
-            LogOut();
+            Logout();
             return $http.post(serviceBase + 'api/account/register', registration).then(function (response) {
                 return response;
             });
