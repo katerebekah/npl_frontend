@@ -1,6 +1,10 @@
 <div class="row">
-    <form class="col s12">
+  <h3>Register or Log In</h3>
+</div>
+<div class="row">
+    <form class="col s6">
       <div class="row">
+        <h5>Register</h5>
         <div class="input-field col s6">
           <input id="email" ng-model="login.registration.email" required type="email" class="validate">
           <label for="userName">Email</label>
@@ -20,10 +24,8 @@
       </div>
       <a ng-click="login.Register()" class="waves-effect waves-light btn">Register</a>
     </form>
-  </div>
-
-  <div class="row">
-    <form class="col s12">
+    <form class="col s6">
+      <h5>Log In</h5>
       <div class="row">
         <div class="input-field col s6">
           <input id="userName" ng-model="login.loginData.userName" required type="email" class="validate">
@@ -36,7 +38,7 @@
           <label for="password">Password</label>
         </div>
       </div>
-      <a ng-click="login.Login()" class="waves-effect waves-light btn">Register</a>
+      <a ng-click="login.Login()" class="waves-effect waves-light btn">Log In</a>
     </form>
   </div>
 

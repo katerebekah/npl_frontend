@@ -1,10 +1,13 @@
 (function(){
     angular.module('npl').controller('DashboardController', DashboardController);
 
-    DashboardController.$inject = ['$scope'];
+    DashboardController.$inject = ['$scope', 'DashboardService'];
 
-    function DashboardController($scope){
+    function DashboardController($scope, DashboardService){
         var viewModel = this;
+
+
+
     }
 
 })();
