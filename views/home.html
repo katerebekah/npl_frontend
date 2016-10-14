@@ -98,8 +98,8 @@
         <div class="modal-content">
             <h4>What services are you requesting?</h4>
             <div class="input-field col s12">
-                <select ng-model="home.clientForm.servicesRequested" >
-                    <option ng-repeat="service in home.services" value="{{service}}">{{service.ServiceCategoryName}}</option>
+                <select >
+                    <option ng-repeat="service in home.services" value="{{service}}">{{service.ServiceDescription}}</option>
                 </select>
                 <label>Services</label>
             </div>

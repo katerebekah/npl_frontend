@@ -9,27 +9,40 @@
     </div>
 </div>
 <div class="row">
+    <div class="row">
+         <div class="col-md-2 pull col-md-push-1">
+             <ul style="list-style: none;">
+                 <li>New</li>
+                <li>In Progress</li>
+                 <li>Completed</li>
+                 <li>Overdue</li>
+             </ul>
+                 <hr class="m-y-2">
+                 <ul style="list-style: none;">
+                     <li>Completed by Me</li>
+                 </ul>
+         </div>
     <div class="col s4">
         
     </div>
-    <div class="col s8">
+    <div class="col s7">
         <div ng-repeat="client in clients">
             <div class="card">
                 <div class="card-content">
-                    <span class="card-title">{{client.firstName}} {{client.lastName}}</span>
-                    <p>{{client.phoneNumber}}</p>
-                    <p>{{client.email}}</p>
-                    <p>{{client.address}}</p>
-
+                    <h3 class="card-title">{{client.FirstName}} {{client.LastName}}</h3>
+                    <ul style="list-style-type: none;">
+                        <li class="glyphicon glyphicon-earphone">{{client.PhoneNumber1}}</li> /br
+                        <li class="glyphicon glyphicon-envelope">>{{client.EmailAddress}}</li> /br
+                        <li class="glyphicon glyphicon-map-marker">{{client.HouseNumber}} {{client.StreetAddress}} {{client.ZipCode}}</li>
+                    </ul>
                     <h5>Services</h5>
                     <div ng-repeat="referral in client.referrals">
                         <div class="waves-effect waves-light btn modal-trigger" href="#modal1" ng-click="openConfirm(referral)">
                             {{referral.referraName}}
                         </div>
                     </div>
-
                     <h5>Notes</h5>
-                    <textarea ng-model="client.notes" rows="5"></textarea>
+                    <textarea>{{client.Notes}}</textarea>
                 </div>
             </div>
         </div>
