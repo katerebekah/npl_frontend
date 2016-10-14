@@ -22,9 +22,9 @@
                     <p>{{client.address}}</p>
 
                     <h5>Services</h5>
-                    <div ng-repeat="service in client.services">
-                        <div class="chip" ng-click="openConfirm(service)">
-                            {{service.Name}}
+                    <div ng-repeat="referral in client.referrals">
+                        <div class="waves-effect waves-light btn modal-trigger" href="#modal1" ng-click="openConfirm(referral)">
+                            {{referral.referraName}}
                         </div>
                     </div>
 
@@ -34,4 +34,14 @@
             </div>
         </div>
     </div>
+     <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Confirm</h4>
+      <p>Do you want to mark {{Client.FirstName}} {{Client.LastName}} request for {{referral.ServiceCategory.ServiceCategoryName}} as {{$scope.referralProgressOrComplete}}.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" ng-click="confirmReferral()">Agree</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-red">Disagree</a>
+    </div>
+  </div>
 </div>
