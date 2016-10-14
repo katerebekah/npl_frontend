@@ -265,7 +265,29 @@
             GetAllClients: GetAllClients,
             GetAllEmployees: GetAllEmployees,
             GetAllReferrals: GetAllReferrals,
-            GetAllServices: GetAllServices
+            GetAllServices: GetAllServices,
+            DeleteAgency: DeleteAgency,
+            DeleteClient: DeleteClient,
+            DeleteEmployee: DeleteEmployee,
+            DeleteReferral: DeleteReferrel,
+            DeleteService: DeleteService,
+            UpdateClient: UpdateClient,
+            UpdateEmployee: UpdateEmployee,
+            UpdateReferral: UpdateReferrel,
+            UpdateService: UpdateService, 
+            UpdateAgency: UpdateAgency,
+            AddAgency: AddAgency,
+            AddClient: AddClient,
+            AddEmployee: AddEmployee,
+            AddReferral: AddReferrel,
+            AddService: AddService,
+            GetAgencyById: GetAgencyById,
+            GetClientByEmail: GetClientByEmail,
+            GetClientById: GetClientById,
+            GetEmployeeById: GetEmployeeById,
+            GetReferralByClientId: GetReferralByClientId,
+            GetReferralById: GetReferralById,
+            GetServiceById: GetServiceById
         }
     }
 
