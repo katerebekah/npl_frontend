@@ -10,6 +10,7 @@
         viewModel.services = [];
         viewModel.getAllServices = function(){
             DashboardService.GetAllServices().then(function(response){
+                console.log(response.data);
                 viewModel.services = response.data;
             })   
         }
@@ -32,7 +33,7 @@
             houseNumber: "",
             zipCode: "",
             notes: "",
-            serviceIdsRequested: ""
+            servicesRequested: []
         }
 
         viewModel.clearForm = function(){
@@ -48,7 +49,7 @@
                 houseNumber: "",
                 zipCode: "",
                 notes: "",
-                serviceIdsRequested: ""
+                servicesRequested: []
             }
 
         }
