@@ -8,7 +8,8 @@
 
         var auth = {
             isAuthenticated: false,
-            userName: ""
+            userName: "",
+            useRefreshTokens: false
         };
 
         var externalAuthData = {
@@ -40,7 +41,7 @@
 
                 deferred.resolve(response);
             }).error(function (err, status) {
-                logOut();
+                Logout();
                 deferred.reject(err);
             });
             return deferred.promise;
