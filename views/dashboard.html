@@ -1,35 +1,60 @@
 
-<div class="row">
-    <div class="col s6">
+
+
+<div class="container">
+    <div class="col-sm-12 ">
         <h3 class="text-white">Requests</h3>
     </div>
-    <div class="col s6">
-        <a ng-click="filters" class="waves-effect waves-light btn">Filters</a>
-        <a ng-click="order" class="waves-effect waves-light btn">Most Recent</a>
+    <div class="row">
+        <div class="col-sm-2">
+            <h3 class="text-white">Date</h3>
+        </div>
+        <div class="col-sm-4 col-sm-push-6">
+            <a ng-click="filters" class="waves-effect waves-light btn">Filters</a>
+            <a ng-click="order" class="waves-effect waves-light btn">Most Recent</a>
+        </div>
     </div>
 </div>
-<div class="row">
-    <div class="col s4">
+<div class="container">
+    <div class="row">
         
     </div>
-    <div class="col s8">
+    <div class="row">
+        <div class="col-md-2 pull col-md-push-1">
+            <ul style="list-style: none;">
+                <li>New</li>
+                <li>In Progress</li>
+                <li>Completed</li>
+                <li>Overdue</li>
+            </ul>
+                <hr class="m-y-2">
+                <ul style="list-style: none;">
+                    <li>Completed by Me</li>
+                </ul>
+        </div>
         <div ng-repeat="client in clients">
             <div class="card">
-                <div class="card-content">
-                    <span class="card-title">{{client.firstName}} {{client.lastName}}</span>
-                    <p>{{client.phoneNumber}}</p>
-                    <p>{{client.email}}</p>
-                    <p>{{client.address}}</p>
-
-                    <h5>Services</h5>
-                    <div ng-repeat="service in client.services">
-                        <div class="chip" ng-click="openConfirm(service)">
-                            {{service.Name}}
-                        </div>
+                <div class="col-md-8 pull-right card-content">
+                    <div class="row">
+                        <div class=" col-md-4 center-block">Name</div>
+                        <div class="col-md-4 center-block">Time</div>
                     </div>
+                    <div class="row">
+                        <span class="card-title">{{client.firstName}} {{client.lastName}}</span>
+                        <p>{{client.phoneNumber}}</p>
+                        <p>{{client.email}}</p>
+                        <p>{{client.address}}</p>
 
-                    <h5>Notes</h5>
-                    <textarea ng-model="client.notes" rows="5"></textarea>
+                        <h5>Services</h5>
+                        <div ng-repeat="service in client.services">
+                            <div class="chip" ng-click="openConfirm(service)">
+                                {{service.Name}}
+                            </div>
+                        </div>
+
+                        <h5>Notes</h5>
+                        <textarea ng-model="client.notes" rows="5"></textarea>
+                    </div>
                 </div>
             </div>
         </div>
