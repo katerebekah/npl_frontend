@@ -12,7 +12,12 @@
             email: "",
             password: "",
             confirmPassword: ""
-        }
+        };
+
+        viewModel.loginData = {
+            userName: "",
+            password: ""
+        };
 
         viewModel.Register = function(){
             AuthService.Register(viewModel.registration).then(function (response) {
@@ -36,7 +41,8 @@
 
         viewModel.Login = function(){
  
-            AuthService.Login(viewModel.registration).then(function (response) {
+            AuthService.Login(viewModel.loginData).then(function (response) {
+                console.log(response);
                 $location.path('/dashboard');    
             },
             function (err) {
